@@ -3,6 +3,8 @@ from collections import defaultdict
 members = []
 
 def add():
+    """add the specified employee's data
+    """
     global members
     while True:
         department = input('請輸入部門： ')
@@ -24,6 +26,11 @@ def add():
                 return
 
 def remove():
+    """remove the specify employee
+
+    Returns:
+        bool: if sucessfu
+    """
     name = input('請輸入要刪除的姓名： ')
     for i, member in enumerate(members):
         if name in member['姓名']:
@@ -45,6 +52,11 @@ def remove():
     return False
 
 def modify():
+    """modify the specify employee
+
+    Returns:
+        bool: Whether the employee data was successfully modified
+    """
     name = input('請輸入要修改的姓名： ')
     for member in members:
         if name in member['姓名']:
@@ -89,6 +101,11 @@ def modify():
 
 
 def find():
+    """find the specify employee's data
+
+    Returns:
+        bool: Whether the employee data was successfully found
+    """
     global members
     # found = False
     name = input('請輸入要查詢的姓名： ')
@@ -115,6 +132,8 @@ def find():
     
 
 def show_all():
+    """show all employee(s)'s data
+    """
     if len(members) == 0:
         print('目前沒有任何資料')
         print()
@@ -126,9 +145,9 @@ def show_all():
             print(f'{v}\t\t', end='')
         print()
     print()
-    return 0
 
 def print_UI():
+    """print the main UI"""
     while True:
         print('--- 人事資料管理系統 ---')
         print('1. 新增資料')
@@ -152,10 +171,17 @@ def print_UI():
         elif selection == 6:
             print('系統已退出。')
             exit()
+        else:
+            print('無效的選擇，請重新選擇。', end='\n\n')
             
         
 
 def main():
+    """Main function to run the program
+
+    Returns:
+        int: Exit status code
+    """
     print_UI()
     return 0
 
