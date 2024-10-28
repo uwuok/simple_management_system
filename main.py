@@ -1,6 +1,5 @@
-from collections import defaultdict
-
 members = []
+
 
 def add():
     """add the specified employee's data
@@ -24,6 +23,7 @@ def add():
             elif y_n.lower() == 'n':
                 print()
                 return
+
 
 def remove():
     """remove the specify employee
@@ -145,6 +145,7 @@ def show_all():
             print(f'{v}\t\t', end='')
         print()
     print()
+    
 
 def print_UI():
     """print the main UI"""
@@ -175,7 +176,6 @@ def print_UI():
             print('無效的選擇，請重新選擇。', end='\n\n')
             
         
-
 def main():
     """Main function to run the program
 
